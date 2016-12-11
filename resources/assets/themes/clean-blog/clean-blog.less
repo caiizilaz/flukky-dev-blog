@@ -6,7 +6,7 @@
 body {
 	.serif-font;
 	font-size: 20px;
-	color: @gray-dark;
+	color: @primary-color;
 }
 
 // Typography
@@ -30,10 +30,10 @@ h6 {
 }
 
 a {
-	color: @gray-dark;
+	color: @primary-color;
 	&:hover,
 	&:focus {
-		color: @theme-primary;
+		color: @primary-color;
 	}
 }
 
@@ -50,10 +50,10 @@ blockquote {
 }
 
 hr.small {
-	max-width: 100px;
+	max-width: 500px;
 	margin: 15px auto;
 	border-width: 4px;
-	border-color: white;
+	border-color: @primary-color;
 }
 
 // Navigation
@@ -90,21 +90,21 @@ hr.small {
 		background: transparent;
 		border-bottom: 1px solid transparent;
 		.navbar-brand {
-			color: white;
+			color: @primary-color;
 			padding: 20px;
 			&:hover,
 			&:focus {
-				color: fade(white, 80%);
+				color: fade(@primary-color, 80%);
 			}
 		}
 		.nav {
 			li {
 				a {
-					color: white;
+					color: @primary-color;
 					padding: 20px;
 					&:hover,
 					&:focus {
-						color: fade(white, 80%);
+						background-color: fade(@secondary-color, 80%);
 					}
 				}
 			}
@@ -126,25 +126,25 @@ hr.small {
 			/* when the user scrolls down, we hide the header right above the viewport */
 			position: fixed;
 			top: -61px;
-			background-color: fade(white, 90%);
-			border-bottom: 1px solid darken(white, 5%);
+			background-color: fade(@secondary-color, 90%);
+			border-bottom: 1px solid darken(@secondary-color, 5%);
 			-webkit-transition: -webkit-transform 0.3s;
 			-moz-transition: -moz-transform 0.3s;
 			transition: transform 0.3s;
 			.navbar-brand {
-				color: @gray-dark;
+				color: @primary-color;
 				&:hover,
 				&:focus {
-					color: @theme-primary;
+					color: @primary-color;
 				}
 			}
 			.nav {
 				li {
 					a {
-						color: @gray-dark;
+						color: @primary-color;
 						&:hover,
 						&:focus {
-							color: @theme-primary;
+							color: @primary-color;
 						}
 					}
 				}
@@ -169,15 +169,12 @@ hr.small {
 	background-attachment: scroll;
 	.background-cover;
 	// NOTE: Background images are set within the HTML using inline CSS!
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	.site-heading,
 	.post-heading,
 	.page-heading {
 		padding: 100px 0 50px;
-		color: white;
-		@media only screen and (min-width: 768px) {
-			padding: 150px 0;
-		}
+		color: @primary-color;
 	}
 	.site-heading,
 	.page-heading {
@@ -203,6 +200,7 @@ hr.small {
 	.post-heading {
 		h1 {
 			font-size: 35px;
+			color: @third-color;
 		}
 		.subheading,
 		.meta {
@@ -220,13 +218,15 @@ hr.small {
 			font-style: italic;
 			font-weight: 300;
 			font-size: 20px;
+			color: @third-color;
 			a {
-				color: white;
+				color: @primary-color;
 			}
 		}
 		@media only screen and (min-width: 768px) {
 			h1 {
 				font-size: 55px;
+				color: @third-color;
 			}
 			.subheading {
 				font-size: 30px;
@@ -239,16 +239,17 @@ hr.small {
 
 .post-preview {
 	> a {
-		color: @gray-dark;
+		color: @primary-color;
 		&:hover,
 		&:focus {
 			text-decoration: none;
-			color: @theme-primary;
+			color: @primary-color;
 		}
 		> .post-title {
 			font-size: 30px;
 			margin-top: 30px;
 			margin-bottom: 10px;
+			color: @third-color;
 		}
 		> .post-subtitle {
 			margin: 0;
@@ -257,16 +258,16 @@ hr.small {
 		}
 	}
 	> .post-meta {
-		color: @gray-light;
+		color: @third-color;
 		font-size: 18px;
 		font-style: italic;
 		margin-top: 0;
 		> a {
 			text-decoration: none;
-			color: @gray-dark;
+			color: @primary-color;
 			&:hover,
 			&:focus {
-				color: @theme-primary;
+				color: @primary-color;
 				text-decoration: underline;
 			}
 		}
@@ -275,6 +276,7 @@ hr.small {
 		> a {
 			> .post-title {
 				font-size: 36px;
+				color: @third-color;
 			}
 		}
 	}
@@ -306,9 +308,11 @@ footer {
 		padding: 0;
 	}
 	.copyright {
-		font-size: 14px;
+		font-size: 20px;
 		text-align: center;
 		margin-bottom: 0;
+		color: @third-color;
+		font-weight: 600;
 	}
 }
 
@@ -364,7 +368,7 @@ footer {
 
 .floating-label-form-group-with-focus {
 	label {
-		color: @theme-primary;
+		color: @primary-color;
 	}
 }
 
@@ -392,9 +396,9 @@ form .row:first-child .floating-label-form-group {
 .btn-default {
 	&:hover,
 	&:focus {
-		background-color: @theme-primary;
-		border: 1px solid @theme-primary;
-		color: white;
+		background-color: @primary-color;
+		border: 1px solid @primary-color;
+		color: @secondary-color;
 	}
 }
 
@@ -413,15 +417,15 @@ form .row:first-child .floating-label-form-group {
 			font-weight: 800;
 			letter-spacing: 1px;
 			padding: 15px 25px;
-			background-color: white;
+			background-color: @secondary-color;
 			border-radius: 0;
 		}
 
 		> a:hover,
 		> a:focus {
-			color: white;
-			background-color: @theme-primary;
-			border: 1px solid @theme-primary;
+			color: @secondary-color;
+			background-color: @primary-color;
+			border: 1px solid @primary-color;
 		}
 	}
 
@@ -431,7 +435,7 @@ form .row:first-child .floating-label-form-group {
 		> a:focus,
 		> span {
 			color: @gray-light;
-			background-color: @gray-dark;
+			background-color: @primary-color;
 			cursor: not-allowed;
 		}
 	}
@@ -450,15 +454,16 @@ form .row:first-child .floating-label-form-group {
 			 font-weight: 800;
 			 letter-spacing: 1px;
 			 padding: 15px 25px;
-			 background-color: white;
+			 background-color: @secondary-color;
 			 border-radius: 0;
+			 color: @primary-color
 		 }
 
 		 > a:hover,
 		 > a:focus {
-			 color: white;
-			 background-color: @theme-primary;
-			 border: 1px solid @theme-primary;
+			 color: @secondary-color;
+			 background-color: @primary-color;
+			 border: 1px solid @primary-color;
 		 }
 	 }
 
@@ -466,10 +471,19 @@ form .row:first-child .floating-label-form-group {
 		 > a,
 		 > a:hover,
 		 > a:focus,
-		 > span {
-			 color: @gray-light;
-			 background-color: @gray-dark;
+		 > span,
+		 > span:hover {
+			 color: @primary-color;
+			 background-color: @secondary-color;
 			 cursor: not-allowed;
+		 }
+	 }
+	 .active {
+		  > span, 
+		  > span:hover {
+		 background-color: @third-color;
+		 border-color: @third-color;
+		 cursor: not-allowed;
 		 }
 	 }
  }
@@ -477,27 +491,79 @@ form .row:first-child .floating-label-form-group {
 // Highlight Color Customization
 
 ::-moz-selection {
-	color: white;
+	color: @secondary-color;
 	text-shadow: none;
-	background: @theme-primary;
+	background: @primary-color;
 }
 
 ::selection {
-	color: white;
+	color: @secondary-color;
 	text-shadow: none;
-	background: @theme-primary;
+	background: @primary-color;
 }
 
 img::selection {
-	color: white;
+	color: @secondary-color;
 	background: transparent;
 }
 
 img::-moz-selection {
-	color: white;
+	color: @secondary-color;
 	background: transparent;
 }
 
 body {
-	-webkit-tap-highlight-color: @theme-primary;
+	-webkit-tap-highlight-color: @primary-color;
 }
+
+.navbar-default .navbar-brand, .navbar-custom .navbar-header .navbar-toggle, .navbar-default .navbar-nav>li>a {
+	color: @primary-color;
+	&:hover,
+	&:focus {
+		color: fade(@primary-color, 80%);
+		background-color: @secondary-color;
+	}
+	
+}
+
+.visible {
+  font-size: 70px;
+  font-weight:600;
+  overflow:hidden;
+  height:100px;
+  padding:10 80px;
+}
+
+.visible ul {
+  list-style:none;
+  -webkit-animation-name: change;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: change;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+.visible ul li {
+  line-height:100px;
+  margin:0;
+}
+
+@-webkit-keyframes change {
+  0%, 12%, 100% {transform:translateY(0);}
+  17%,29% {transform:translateY(-25%);}
+  34%,46% {transform:translateY(-50%);}
+  51%,63% {transform:translateY(-75%);}
+  68%,80% {transform:translateY(-50%);}
+  85%,97% {transform:translateY(-25%);}
+}
+
+@keyframes change {
+  0%, 12%, 100% {transform:translateY(0);}
+  17%,29% {transform:translateY(-25%);}
+  34%,46% {transform:translateY(-50%);}
+  51%,63% {transform:translateY(-75%);}
+  68%,80% {transform:translateY(-50%);}
+  85%,97% {transform:translateY(-25%);}
+}
+

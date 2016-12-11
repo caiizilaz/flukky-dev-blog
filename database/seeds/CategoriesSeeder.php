@@ -22,7 +22,7 @@ class CategoriesSeeder extends Seeder
         
         $categories = \App\Category::take(4)->get();
         foreach (\App\Post::all() as $post) {
-            $toAttach = $categories->take(rand(1,5));
+            $toAttach = $categories->take(rand(1,2));
             $post->categories()->attach($toAttach);
         }
 
